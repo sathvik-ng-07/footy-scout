@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scouting Report for {{ player_name }}</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.3/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #121212;
+        color: #e0e0e0;
+      }
+      .container {
+        background-color: #1e1e1e;
+        border-radius: 8px;
+        padding: 20px;
+      }
+      .btn-secondary {
+        background-color: #4a4a4a;
+        border-color: #4a4a4a;
+      }
+      .btn-secondary:hover {
+        background-color: #6a6a6a;
+        border-color: #6a6a6a;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container my-5">
+      <h1 class="text-center mb-4">Scouting Report for {{ player_name }}</h1>
+      <div class="report-content">{{ report|safe }}</div>
+      <div class="text-center mt-4">
+        <a href="{% url 'get_player_report' %}" class="btn btn-secondary"
+          >Generate another report</a
+        >
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  </body>
+</html>
